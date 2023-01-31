@@ -1,4 +1,3 @@
-
 #include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -13,9 +12,10 @@
 #define e 21
 #define f 19
 #define g 18
-#define bt1 32
-uint32_t delay = 1000000;
-int LED_mode = 0;
+#define D1 32
+#define D2 33
+
+int i,j;
 
 void zero(){
 	gpio_set_level(a,1);
@@ -116,6 +116,20 @@ void nine(){
 	gpio_set_level(g,1);
 }
 
+void display1(){
+	gpio_set_level(D1,1);
+	vTaskDelay(1);
+	gpio_set_level(D2,0);
+	vTaskDelay(1);
+}
+
+void display2(){
+	gpio_set_level(D1,0);
+	vTaskDelay(1);
+	gpio_set_level(D2,1);
+	vTaskDelay(1);
+}
+
 void app_main(void){
 	gpio_reset_pin(a);
 	gpio_reset_pin(b);
@@ -124,7 +138,11 @@ void app_main(void){
 	gpio_reset_pin(e);
 	gpio_reset_pin(f);
 	gpio_reset_pin(g);
+	gpio_reset_pin(D1);
+	gpio_reset_pin(D2);
 
+	gpio_set_direction(D1,GPIO_MODE_OUTPUT);
+	gpio_set_direction(D2,GPIO_MODE_OUTPUT);
 	gpio_set_direction(a,GPIO_MODE_OUTPUT);
 	gpio_set_direction(b,GPIO_MODE_OUTPUT);
 	gpio_set_direction(c,GPIO_MODE_OUTPUT);
@@ -132,28 +150,11 @@ void app_main(void){
 	gpio_set_direction(e,GPIO_MODE_OUTPUT);
 	gpio_set_direction(f,GPIO_MODE_OUTPUT);
 	gpio_set_direction(g,GPIO_MODE_OUTPUT);
-	gpio_set_direction(bt1,GPIO_MODE_INPUT);
 
-	while(1){
-        zero();
-        usleep(delay);
-        one();
-        usleep(delay);
-        two();
-        usleep(delay);
-        three();
-        usleep(delay);
-        four();
-        usleep(delay);
-        five();
-        usleep(delay);
-        six();
-        usleep(delay);
-        seven();
-        usleep(delay);
-        eight();
-        usleep(delay);
-        nine();
-        usleep(delay);
+
+while (true){
+	for (i = 0;i<=9){
+		
+	}
 }
 }
