@@ -181,6 +181,7 @@ void app_main(void){
 	int x1,x2;
 	x1 = 0;
 	x2 = 0;
+	int i =0;
 
 	gpio_reset_pin(a);
 	gpio_reset_pin(b);
@@ -204,10 +205,19 @@ void app_main(void){
 
 
 while (true){
-	for(x2 =0;x2<100;x2++){
-		if((x2%10) == 0){
+	if(i<50){
 		play(0,x1);
-		play(1,x2%10);
+		play(1,x2);
+		i++;
+	}else{
+		i = 0;
+		x2++;
+		if(x2 ==10){
+			x2 =0;
+			x1++;
+			if(x1 == 10){
+				x1 =0;
+			}
 		}
 	}
 }
