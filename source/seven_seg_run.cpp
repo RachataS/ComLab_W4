@@ -15,8 +15,6 @@
 #define D1 32
 #define D2 33
 
-int i,j;
-
 void zero(){
 	gpio_set_level(a,1);
 	gpio_set_level(b,1);
@@ -130,7 +128,60 @@ void display2(){
 	vTaskDelay(1);
 }
 
+void play(int digit,int data){
+if(digit == 0){
+	gpio_set_level(D1,1);
+	gpio_set_level(D2,0);
+}else{
+	gpio_set_level(D1,0);
+	gpio_set_level(D2,1);
+}
+
+switch(data){
+case 0:
+	zero();
+	break;
+case 1:
+	one();
+	break;
+case 2:
+	two();
+	break;
+case 3:
+	three();
+	break;
+case 4:
+	four();
+	break;
+case 5:
+	five();
+	break;
+case 6:
+	six();
+	break;
+case 7:
+	seven();
+	break;
+case 8:
+	eight();
+	break;
+case 9:
+	nine();
+	break;
+default:
+	zero();
+}
+usleep(10000);
+
+gpio_set_level(D1,0);
+gpio_set_level(D2,0);
+}
+
 void app_main(void){
+	int x1,x2;
+	x1 = 0;
+	x2 = 0;
+
 	gpio_reset_pin(a);
 	gpio_reset_pin(b);
 	gpio_reset_pin(c);
@@ -153,8 +204,11 @@ void app_main(void){
 
 
 while (true){
-	for (i = 0;i<=9){
-		
+	for(x2 =0;x2<100;x2++){
+		if((x2%10) == 0){
+		play(0,x1);
+		play(1,x2%10);
+		}
 	}
 }
 }
