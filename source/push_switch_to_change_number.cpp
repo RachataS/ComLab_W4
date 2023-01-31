@@ -137,70 +137,82 @@ void app_main(void){
 	while(1){
         if(gpio_get_level(bt1) == 0){
             LED_mode++;
+            usleep(500000);
         }
         switch(LED_mode){
             case 0:
                 zero();
                 if(gpio_get_level (bt1) == 0){
                     LED_mode++;
+                    usleep(500000);
                  }
                  break;
             case 1:
                 one();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(500000);
                 }
                 break;
             case 2:
                 two();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(500000);
                 }
             break;
                 case 3:
                 three();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(500000);
                     }
                 break;
             case 4:
                 four();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(500000);
                     }
                 break;
             case 5:
                 five();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(500000);
                     }
                 break;
             case 6:
                 six();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(500000);
                 }
                 break;
             case 7:
                 seven();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(500000);
                 }
                 break;
             case 8:
                 eight();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(500000);
                     }
                 break;
             case 9:
             nine();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(500000);
                 }
                 break;
-                case 10:
-                LED_mode = 0;
+               case 10:
+                	LED_mode = 0;
+                	break;
             default:
                 zero();
         }
