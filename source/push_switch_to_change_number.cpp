@@ -143,64 +143,75 @@ void app_main(void){
                 zero();
                 if(gpio_get_level (bt1) == 0){
                     LED_mode++;
+                    usleep(delay);
                  }
                  break;
             case 1:
                 one();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(delay);
                 }
                 break;
             case 2:
                 two();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(delay);
                 }
             break;
                 case 3:
                 three();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(delay);
                     }
                 break;
             case 4:
                 four();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(delay);
                     }
                 break;
             case 5:
                 five();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(delay);
                     }
                 break;
             case 6:
                 six();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(delay);
                 }
                 break;
             case 7:
                 seven();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(delay);
                 }
                 break;
             case 8:
                 eight();
                 if(gpio_get_level (bt1) == 0){
                         LED_mode++;
+                        usleep(delay);
                     }
                 break;
             case 9:
             nine();
                 if(gpio_get_level (bt1) == 0){
                      LED_mode++;
+                     usleep(delay);
                 }
                 break;
                 case 10:
                 LED_mode = 0;
+                break;
             default:
                 zero();
         }
