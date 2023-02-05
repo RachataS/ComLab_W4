@@ -114,20 +114,6 @@ void nine(){
 	gpio_set_level(g,1);
 }
 
-void display1(){
-	gpio_set_level(D1,1);
-	vTaskDelay(1);
-	gpio_set_level(D2,0);
-	vTaskDelay(1);
-}
-
-void display2(){
-	gpio_set_level(D1,0);
-	vTaskDelay(1);
-	gpio_set_level(D2,1);
-	vTaskDelay(1);
-}
-
 void play(int digit,int data){
 if(digit == 0){
 	gpio_set_level(D1,1);
